@@ -8,6 +8,7 @@ from pprint import pprint
 app = Flask(__name__)
 @app.route('/', methods=['GET','POST'])
 def rootpage():
+    # Declaring the variable that will be transferred to Html
     finalsub = None
     finalsent = None
     newsp = []
