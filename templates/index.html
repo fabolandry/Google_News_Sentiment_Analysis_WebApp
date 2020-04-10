@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sentiment Quick Check</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
+</head>
+<body>
+<h1>Google News Sentiment Analysis</h1>
+<h2> Help ? </h2>
+<div class="posbox">
+<form class="pure-form" method="POST" action="/">
+    <input type="text" name="search-term" class="pure-input-2-3">
+    <button class="button-secondary pure-button" onclick="updateChart()">Sentiment</button>
+</form>
+</div>
+<br>
+<div class="posbox2">
+    <div class="childposbox1" width=500px height=250px>
+        {% if newsp %}
+        <canvas  id="myChart" width=500px height=250px></canvas>
+        {% endif %}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+        <script>
+            var sent = {{finalsent}};
+            var sub = {{finalsub}};
+            var newdata = [sent, sub];
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var chart = new Chart(ctx, {
+                // The type of chart we want to create
+                type: 'bar',
+
+                // The data for our dataset
+                data: {
+                    labels: ['Sentiment','Subjectivity'],
+                    datasets: [{
+                        label: 'Result',
+                        backgroundColor: 'rgb(0, 99, 132)',
+                        borderColor: 'rgb(255, 99, 132)',
+                        data: newdata,
+                    }]
+                },
+
+                // Configuration options go here
+                options: {}
+            });
+            function updateChart() {
+                chart.data.datasets[0].data = newdata;
+                chart.update();
+            };
+        </script>
+    </div>
+<br>
+<div>
+    {% if newsp %}
+        <marquee behavior="scroll" direction="down">{{newsp}}</marquee>
+    {% endif %}
+</div>
+</div>
+</body>
+</html>

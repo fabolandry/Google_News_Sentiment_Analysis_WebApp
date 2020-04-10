@@ -1,0 +1,61 @@
+body {
+  background-image: url("image.gif");
+  background-color: #485563;
+}
+.posbox{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.posbox2{
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: left;
+}
+h2{
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 350;
+    line-height: 26.4px;
+    color: blue;
+    text-align: right;
+    transform: translate(-33%, 55%);
+    opacity: 0.3;
+}
+h1 {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 30px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 700;
+    line-height: 26.4px;
+    color: white;
+    text-align: center;
+    }
+form{
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    }
+.childposbox1{
+    position: absolute;
+    top: 60%;
+    left: 5%;
+    transform: translate(5%, 0%);
+    }
+marquee{
+    color: white;
+    width: 500px;
+    height: 600px;
+    opacity: 0.1;
+    position: absolute;
+    top: 5%;
+    left: 8%;
+    text-align: justify;
+    text-justify: inter-word;
+    }
