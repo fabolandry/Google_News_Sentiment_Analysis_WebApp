@@ -54,4 +54,4 @@ class Analysis:
                 self.sentiment += blob.sentiment.polarity / len(self.news)
                 self.subjectivity += blob.sentiment.subjectivity / len(self.news)
 
-app.run()
+app.run(host='0.0.0.0', debug=True, port=80)
