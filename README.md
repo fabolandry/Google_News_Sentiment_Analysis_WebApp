@@ -1,6 +1,6 @@
 # Google News Sentiment Analysis
 
-The project is meant to provide sentiment anaylis on a google news search result
+The project is meant to provide sentiment analysis on a google news search result
 
 ## The Web App
 
